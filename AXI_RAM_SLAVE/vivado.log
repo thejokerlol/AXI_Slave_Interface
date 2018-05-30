@@ -1,0 +1,164 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Wed May 30 16:57:46 2018
+# Process ID: 8744
+# Log file: C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/vivado.log
+# Journal file: C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/vamsi/Desktop/AXI_RAM_Interface/AXI_RAM_SLAVE' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'.
+open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:07 . Memory (MB): peak = 723.199 ; gain = 148.797
+set_property top RAM_Module [current_fileset]
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'RAM_Module' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in 'C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.sim/sim_1/behav'
+"xvlog -m64 --relax -prj RAM_Module_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/RAM_Module.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RAM_Module
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.sim/sim_1/behav'
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto cf8bc1cb6eef46aa844a684685ef5b32 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot RAM_Module_behav xil_defaultlib.RAM_Module xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.RAM_Module
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot RAM_Module_behav
+
+****** Webtalk v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.sim/sim_1/behav/xsim.dir/RAM_Module_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.sim/sim_1/behav/xsim.dir/RAM_Module_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed May 30 16:59:59 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed May 30 16:59:59 2018...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 743.871 ; gain = 0.000
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "RAM_Module_behav -key {Behavioral:sim_1:Functional:RAM_Module} -tclbatch {RAM_Module.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+source RAM_Module.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'RAM_Module_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 743.871 ; gain = 0.000
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a100tcsg324-1
+Top: RAM_Module
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:01:31 ; elapsed = 00:02:57 . Memory (MB): peak = 777.305 ; gain = 602.219
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'RAM_Module' [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/RAM_Module.v:23]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 10 - type: integer 
+	Parameter RAM_DEPTH bound to: 256 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'RAM_Module' (1#1) [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/RAM_Module.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:02:19 ; elapsed = 00:03:47 . Memory (MB): peak = 1172.535 ; gain = 997.449
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:25 ; elapsed = 00:03:56 . Memory (MB): peak = 1172.535 ; gain = 997.449
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/constrs_1/new/AXI_Slave_Constraints.xdc]
+Finished Parsing XDC File [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/constrs_1/new/AXI_Slave_Constraints.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-141] Inserted 32 OBUFs to IO ports without IO buffers.
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:03:29 ; elapsed = 00:05:02 . Memory (MB): peak = 1546.031 ; gain = 1370.945
+6 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:02 ; elapsed = 00:02:09 . Memory (MB): peak = 1546.031 ; gain = 768.727
+set_property STEPS.SYNTH_DESIGN.ARGS.FLATTEN_HIERARCHY none [get_runs synth_1]
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/AXI_Slave_RAM.v" into library work [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/AXI_Slave_RAM.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/RAM_Module.v" into library work [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/RAM_Module.v:1]
+[Wed May 30 17:08:29 2018] Launched synth_1...
+Run output will be captured here: C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.runs/synth_1/runme.log
+reset_run synth_1 -noclean_dir 
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:04:37 ; elapsed = 00:22:25 . Memory (MB): peak = 1546.031 ; gain = 1370.945
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'RAM_Module' [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/RAM_Module.v:23]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 10 - type: integer 
+	Parameter RAM_DEPTH bound to: 256 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'RAM_Module' (1#1) [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/RAM_Module.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:05:24 ; elapsed = 00:23:12 . Memory (MB): peak = 1761.332 ; gain = 1586.246
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:05:31 ; elapsed = 00:23:20 . Memory (MB): peak = 1761.332 ; gain = 1586.246
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/constrs_1/new/AXI_Slave_Constraints.xdc]
+Finished Parsing XDC File [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/constrs_1/new/AXI_Slave_Constraints.xdc]
+Completed Processing XDC Constraints
+
+refresh_design: Time (s): cpu = 00:01:53 ; elapsed = 00:01:43 . Memory (MB): peak = 1842.285 ; gain = 296.254
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:15 . Memory (MB): peak = 1842.285 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed May 30 17:27:20 2018...

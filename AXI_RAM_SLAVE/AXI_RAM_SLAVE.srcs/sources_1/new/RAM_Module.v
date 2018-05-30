@@ -36,7 +36,7 @@ module RAM_Module(clk,read,enable_RW,address,data_in,data_out);
     output reg[DATA_WIDTH-1:0] data_out;
     
     //memory banks
-    reg[7:0] mem [0:RAM_DEPTH-1][0:3];
+    reg[7:0] mem [0:255][0:3];
     
 /*    initial
     begin:Initialization_of_the_RAM_block
