@@ -23,7 +23,7 @@
 module RAM_Module(clk,read,enable_RW,address,data_in,data_out);
 
 
-    parameter DATA_WIDTH=32;//length of each word
+    parameter DATA_WIDTH=8;//length of each word
     parameter ADDRESS_WIDTH=10;
     parameter RAM_DEPTH=(2**(ADDRESS_WIDTH-2));//no_of locations
     
@@ -36,7 +36,7 @@ module RAM_Module(clk,read,enable_RW,address,data_in,data_out);
     output reg[DATA_WIDTH-1:0] data_out;
     
     //memory banks
-    reg[7:0] mem [0:255][0:3];
+    reg[7:0] mem [0:255];
     
 /*    initial
     begin:Initialization_of_the_RAM_block
@@ -57,17 +57,11 @@ module RAM_Module(clk,read,enable_RW,address,data_in,data_out);
        begin
             if(read)
             begin
-                data_out[7:0]<=mem[address/4][address%4];
-                data_out[15:8]<=mem[(address+1)/4][(address+1)%4];
-                data_out[23:16]<=mem[(address+2)/4][(address+2)%4];
-                data_out[31:24]<=mem[(address+3)/4][(address+3)%4];
+                data_out<=mem[address[9:2]];
             end
             else
             begin
-                mem[address/4][address%4]<=data_in[7:0];
-                mem[(address+1)/4][(address+1)%4]<=data_in[15:8];
-                mem[(address+2)/4][(address+2)%4]<=data_in[23:16];
-                mem[(address+3)/4][(address+3)%4]<=data_in[31:24];                
+                mem[address[9:2]]<=data_in;
             end
        end
     end
