@@ -165,7 +165,7 @@ module AXI_RAM_Slave_tb(
    
    initial
    begin
-    #800 $finish;
+    #1600 $finish;
    end 
     
    always
@@ -226,7 +226,13 @@ module AXI_RAM_Slave_tb(
             
         #40 arvalid<=LOW;
         
+        #160 rready=HIGH;
+        
+        #40 rready=LOW;
+        
+        #80 rready=HIGH;
             
+        #40 rready=LOW;    
             
         
         

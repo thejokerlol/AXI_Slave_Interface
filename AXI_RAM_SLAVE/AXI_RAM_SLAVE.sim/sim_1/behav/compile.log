@@ -2,7 +2,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vamsi/Desktop/AXI_Slave_In
 INFO: [VRFC 10-311] analyzing module RAM_Module
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/AXI_Slave_RAM.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AXI_Slave_RAM
-WARNING: [VRFC 10-986] literal value truncated to fit in 2 bits [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/AXI_Slave_RAM.v:370]
+WARNING: [VRFC 10-756] identifier ram_controller_state is used before its declaration [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/AXI_Slave_RAM.v:272]
+WARNING: [VRFC 10-756] identifier ram_controller_state is used before its declaration [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/AXI_Slave_RAM.v:289]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sim_1/new/AXI_RAM_Slave_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AXI_RAM_Slave_tb
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.sim/sim_1/behav/glbl.v" into library xil_defaultlib

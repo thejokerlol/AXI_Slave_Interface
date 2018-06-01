@@ -86,6 +86,7 @@
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="SrcSet" Val="sources_1"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/AXI_RAM_Slave_tb_behav.wcfg"/>
+        <Option Name="xsim.simulate.runtime" Val="1600ns"/>
         <Option Name="NLNetlistMode" Val="funcsim"/>
       </Config>
     </FileSet>

@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="43" />
+   <WVObjectSize size="50" />
    <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -132,6 +132,7 @@
    <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/rdata" type="array">
       <obj_property name="ElementShortName">rdata[31:0]</obj_property>
       <obj_property name="ObjectShortName">rdata[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/rresp" type="array">
       <obj_property name="ElementShortName">rresp[1:0]</obj_property>
@@ -203,5 +204,33 @@
    <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/enable_RW" type="array">
       <obj_property name="ElementShortName">enable_RW[3:0]</obj_property>
       <obj_property name="ObjectShortName">enable_RW[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/read_address_read_pointer" type="logic">
+      <obj_property name="ElementShortName">read_address_read_pointer</obj_property>
+      <obj_property name="ObjectShortName">read_address_read_pointer</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/read_address_write_pointer" type="logic">
+      <obj_property name="ElementShortName">read_address_write_pointer</obj_property>
+      <obj_property name="ObjectShortName">read_address_write_pointer</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/read_address_queue" type="array">
+      <obj_property name="ElementShortName">read_address_queue[0:1][31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_address_queue[0:1][31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/flip" type="logic">
+      <obj_property name="ElementShortName">flip</obj_property>
+      <obj_property name="ObjectShortName">flip</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/write_address_queue_empty" type="logic">
+      <obj_property name="ElementShortName">write_address_queue_empty</obj_property>
+      <obj_property name="ObjectShortName">write_address_queue_empty</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/write_address_read_pointer" type="logic">
+      <obj_property name="ElementShortName">write_address_read_pointer</obj_property>
+      <obj_property name="ObjectShortName">write_address_read_pointer</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/write_address_write_pointer" type="logic">
+      <obj_property name="ElementShortName">write_address_write_pointer</obj_property>
+      <obj_property name="ObjectShortName">write_address_write_pointer</obj_property>
    </wvobject>
 </wave_config>
