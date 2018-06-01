@@ -1,0 +1,9 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "AXI_RAM_Slave_tb_time_synth.v"
+verilog xil_defaultlib  "../../../../AXI_RAM_SLAVE.srcs/sim_1/new/AXI_RAM_Slave_tb.v"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

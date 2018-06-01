@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1527747620">
-  <File Type="RDS-DCP" Name="RAM_Module.dcp"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1527890641">
+  <File Type="RDS-DCP" Name="AXI_Slave_RAM.dcp"/>
   <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
-  <File Type="RDS-UTIL-PB" Name="RAM_Module_utilization_synth.pb"/>
+  <File Type="RDS-UTIL-PB" Name="AXI_Slave_RAM_utilization_synth.pb"/>
   <File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_1/sources.xml"/>
-  <File Type="RDS-PROPCONSTRS" Name="RAM_Module_drc_synth.rpt"/>
-  <File Type="PA-TCL" Name="RAM_Module.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="AXI_Slave_RAM_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="AXI_Slave_RAM.tcl"/>
   <File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_1/synth_1.psg"/>
-  <File Type="RDS-RDS" Name="RAM_Module.vds"/>
-  <File Type="RDS-UTIL" Name="RAM_Module_utilization_synth.rpt"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="RAM_Module_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="RAM_Module_timing_summary_synth.pb"/>
+  <File Type="RDS-RDS" Name="AXI_Slave_RAM.vds"/>
+  <File Type="RDS-UTIL" Name="AXI_Slave_RAM_utilization_synth.rpt"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="AXI_Slave_RAM_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="AXI_Slave_RAM_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/RAM_Module.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/AXI_Slave_RAM.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -28,7 +35,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/AXI_Slave_RAM.v">
+    <File Path="$PSRCDIR/sources_1/new/DRAM_32.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -38,7 +45,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="RAM_Module"/>
+      <Option Name="TopModule" Val="AXI_Slave_RAM"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

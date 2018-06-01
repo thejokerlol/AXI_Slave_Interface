@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1527891144">
+  <File Type="OPT-DCP" Name="AXI_Slave_RAM_opt.dcp"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="AXI_Slave_RAM_postroute_physopt.dcp"/>
+  <File Type="PA-DCP" Name="AXI_Slave_RAM.dcp"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_1/sources.xml"/>
+  <File Type="PWROPT-DCP" Name="AXI_Slave_RAM_pwropt.dcp"/>
+  <File Type="ROUTE-DCP" Name="AXI_Slave_RAM_routed.dcp"/>
+  <File Type="PA-TCL" Name="AXI_Slave_RAM.tcl"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+  <File Type="OPT-DRC" Name="AXI_Slave_RAM_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="AXI_Slave_RAM.hwdef"/>
+  <File Type="PWROPT-DRC" Name="AXI_Slave_RAM_drc_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="AXI_Slave_RAM_placed.dcp"/>
+  <File Type="PLACE-IO" Name="AXI_Slave_RAM_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="AXI_Slave_RAM_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="AXI_Slave_RAM_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="AXI_Slave_RAM_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="AXI_Slave_RAM_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="AXI_Slave_RAM_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="AXI_Slave_RAM_incremental_reuse_pre_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="AXI_Slave_RAM_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="AXI_Slave_RAM_physopt.dcp"/>
+  <File Type="RDI-RDI" Name="AXI_Slave_RAM.vdi"/>
+  <File Type="PHYSOPT-DRC" Name="AXI_Slave_RAM_drc_physopted.rpt"/>
+  <File Type="ROUTE-DRC" Name="AXI_Slave_RAM_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="AXI_Slave_RAM_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="AXI_Slave_RAM_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="AXI_Slave_RAM_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="AXI_Slave_RAM_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="AXI_Slave_RAM_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="AXI_Slave_RAM_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="AXI_Slave_RAM_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="AXI_Slave_RAM_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="AXI_Slave_RAM_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="AXI_Slave_RAM_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="AXI_Slave_RAM_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="AXI_Slave_RAM_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="AXI_Slave_RAM_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="AXI_Slave_RAM.bit"/>
+  <File Type="BG-BIN" Name="AXI_Slave_RAM.bin"/>
+  <File Type="BITSTR-MSK" Name="AXI_Slave_RAM.msk"/>
+  <File Type="BITSTR-RBT" Name="AXI_Slave_RAM.rbt"/>
+  <File Type="BITSTR-NKY" Name="AXI_Slave_RAM.nky"/>
+  <File Type="BITSTR-BMM" Name="AXI_Slave_RAM_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="AXI_Slave_RAM.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="AXI_Slave_RAM.sysdef"/>
+  <File Type="BG-BGN" Name="AXI_Slave_RAM.bgn"/>
+  <File Type="BG-DRC" Name="AXI_Slave_RAM.drc"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/RAM_Module.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/AXI_Slave_RAM.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/RAM.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/DRAM_32.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="AXI_Slave_RAM"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/AXI_Slave_Constraints.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2015"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

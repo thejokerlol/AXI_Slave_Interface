@@ -1,0 +1,40 @@
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto cf8bc1cb6eef46aa844a684685ef5b32 --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot AXI_RAM_Slave_tb_time_impl -transport_int_delays -pulse_r 0 -pulse_int_r 0 xil_defaultlib.AXI_RAM_Slave_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "AXI_RAM_Slave_tb_time_impl.sdf", for root module "AXI_RAM_Slave_tb/Test_Slave".
+INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "AXI_RAM_Slave_tb_time_impl.sdf", for root module "AXI_RAM_Slave_tb/Test_Slave".
+Time Resolution for simulation is 1ps
+Compiling module simprims_ver.LUT5
+Compiling module simprims_ver.LUT6
+Compiling module simprims_ver.LUT4
+Compiling module simprims_ver.x_lut1_mux2
+Compiling module simprims_ver.LUT1
+Compiling module simprims_ver.ffsrce_fdce
+Compiling module simprims_ver.FDCE
+Compiling module simprims_ver.x_lut3_mux4
+Compiling module simprims_ver.x_lut3_mux4_reduced_0
+Compiling module simprims_ver.LUT3
+Compiling module simprims_ver.x_lut2_mux4
+Compiling module simprims_ver.LUT2
+Compiling module simprims_ver.sffsrce_fdre
+Compiling module simprims_ver.FDRE
+Compiling module simprims_ver.IBUF
+Compiling module simprims_ver.OBUF
+Compiling module simprims_ver.BUFG
+Compiling module simprims_ver.RB18_INTERNAL_VLOG(DOA_REG=0,DOB...
+Compiling module simprims_ver.RAMB18E1(RDADDR_COLLISION_HWCONF...
+Compiling module xil_defaultlib.RAM_Module__1
+Compiling module xil_defaultlib.RAM_Module__2
+Compiling module xil_defaultlib.RAM_Module__3
+Compiling module xil_defaultlib.RAM_Module
+Compiling module simprims_ver.CARRY4
+Compiling module xil_defaultlib.AXI_Slave_RAM
+Compiling module xil_defaultlib.AXI_RAM_Slave_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 6 sub-compilation(s) to finish...
+Built simulation snapshot AXI_RAM_Slave_tb_time_impl

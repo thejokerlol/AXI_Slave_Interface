@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Sat Jun 02 03:41:48 2018
+# Process ID: 12196
+# Log file: C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.sim/sim_1/synth/timing/webtalk.log
+# Journal file: C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.sim/sim_1/synth/timing\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.sim/sim_1/synth/timing/xsim.dir/AXI_RAM_Slave_tb_time_synth/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.sim/sim_1/synth/timing/xsim.dir/AXI_RAM_Slave_tb_time_synth/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Jun 02 03:41:53 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sat Jun 02 03:41:53 2018...

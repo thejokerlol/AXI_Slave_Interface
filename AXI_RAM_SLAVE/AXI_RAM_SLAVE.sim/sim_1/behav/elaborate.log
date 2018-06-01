@@ -3,8 +3,6 @@ Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
 Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto cf8bc1cb6eef46aa844a684685ef5b32 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot AXI_RAM_Slave_tb_behav xil_defaultlib.AXI_RAM_Slave_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-278] actual bit length 3 differs from formal bit length 2 for port awsize [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sim_1/new/AXI_RAM_Slave_tb.v:89]
-WARNING: [VRFC 10-278] actual bit length 3 differs from formal bit length 2 for port arsize [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sim_1/new/AXI_RAM_Slave_tb.v:114]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis

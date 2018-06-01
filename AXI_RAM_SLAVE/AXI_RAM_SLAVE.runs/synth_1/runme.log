@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log RAM_Module.vds -m64 -mode batch -messageDb vivado.pb -notrace -source RAM_Module.tcl
+    with args -log AXI_Slave_RAM.vds -m64 -mode batch -messageDb vivado.pb -notrace -source AXI_Slave_RAM.tcl
 
 WARNING: Default location for XILINX_VIVADO_HLS not found: 
 
@@ -9,24 +9,72 @@ WARNING: Default location for XILINX_VIVADO_HLS not found:
   **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
     ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 
-source RAM_Module.tcl -notrace
-Command: synth_design -top RAM_Module -part xc7a100tcsg324-1 -flatten_hierarchy none
+source AXI_Slave_RAM.tcl -notrace
+Command: synth_design -top AXI_Slave_RAM -part xc7a100tcsg324-1 -flatten_hierarchy none
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
-INFO: [Common 17-1223] The version limit for your license is '2017.08' and will expire in -273 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [Common 17-1223] The version limit for your license is '2017.08' and will expire in -275 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 244.637 ; gain = 68.652
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 244.746 ; gain = 68.805
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'AXI_Slave_RAM' [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/AXI_Slave_RAM.v:23]
+	Parameter HIGH bound to: 1'b1 
+	Parameter LOW bound to: 1'b0 
+	Parameter RAM_CONTROLLER_IDLE bound to: 4'b0000 
+	Parameter WAIT_FOR_CLK_CYCLE bound to: 4'b0001 
+	Parameter PUT_DATA_ON_BUS bound to: 4'b0010 
+	Parameter WAIT_FOR_RREADY bound to: 4'b0011 
+	Parameter WAIT_FOR_WVALID bound to: 4'b0100 
+	Parameter WAIT_FOR_BREADY bound to: 4'b0101 
+	Parameter READ_ADDRESS_IDLE_STATE bound to: 1'b0 
+	Parameter READ_ADDRESS_BUSY_STATE bound to: 1'b1 
 INFO: [Synth 8-638] synthesizing module 'RAM_Module' [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/RAM_Module.v:23]
 	Parameter DATA_WIDTH bound to: 8 - type: integer 
 	Parameter ADDRESS_WIDTH bound to: 10 - type: integer 
 	Parameter RAM_DEPTH bound to: 256 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RAM_Module' (1#1) [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/RAM_Module.v:23]
-WARNING: [Synth 8-3331] design RAM_Module has unconnected port address[1]
-WARNING: [Synth 8-3331] design RAM_Module has unconnected port address[0]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/AXI_Slave_RAM.v:381]
+WARNING: [Synth 8-4767] Trying to implement RAM 'read_size_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "read_size_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'read_address_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "read_address_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'write_size_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "write_size_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'read_len_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "read_len_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'write_len_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "write_len_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'write_id_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "write_id_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'read_id_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "read_id_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'write_address_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "write_address_queue_reg" dissolved into registers
+INFO: [Synth 8-256] done synthesizing module 'AXI_Slave_RAM' (2#1) [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/sources_1/new/AXI_Slave_RAM.v:23]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port awburst[1]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port awburst[0]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wid[3]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wid[2]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wid[1]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wid[0]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wstrb[3]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wstrb[2]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wstrb[1]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wstrb[0]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wlast
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port arburst[1]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port arburst[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 278.844 ; gain = 102.859
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 280.863 ; gain = 104.922
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -36,7 +84,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 278.844 ; gain = 102.859
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 280.863 ; gain = 104.922
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -44,32 +92,99 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/constrs_1/new/AXI_Slave_Constraints.xdc]
+INFO: [Vivado 12-2286] Implicit search of objects for pattern 'clk' matched to 'port' objects. [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/constrs_1/new/AXI_Slave_Constraints.xdc:1]
+Resolution: To avoid ambiguous patterns, provide proper objects using get commands e.g. [get_nets xyz].
 Finished Parsing XDC File [C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.srcs/constrs_1/new/AXI_Slave_Constraints.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 546.461 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 596.738 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 546.461 ; gain = 370.477
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 596.738 ; gain = 420.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 546.461 ; gain = 370.477
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 596.738 ; gain = 420.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 546.461 ; gain = 370.477
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 596.738 ; gain = 420.797
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'ram_controller_state_reg' in module 'AXI_Slave_RAM'
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5544] ROM "ram_controller_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rid" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ram_controller_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ram_controller_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ram_controller_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5562] The signal mem_reg is implemented as block RAM but is better mapped onto distributed LUT RAM for the following reason(s): The *depth (8 address bits)* is shallow. Please use attribute (* ram_style = "distributed" *) to instruct Vivado to infer distributed LUT RAM.
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                     Old Encoding 
+---------------------------------------------------------------------------------------------------
+     RAM_CONTROLLER_IDLE |                              000 |                             0000
+      WAIT_FOR_CLK_CYCLE |                              001 |                             0001
+         PUT_DATA_ON_BUS |                              010 |                             0010
+         WAIT_FOR_RREADY |                              011 |                             0011
+         WAIT_FOR_WVALID |                              100 |                             0100
+         WAIT_FOR_BREADY |                              101 |                             0101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ram_controller_state_reg' using encoding 'sequential' in module 'AXI_Slave_RAM'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:27 . Memory (MB): peak = 546.461 ; gain = 370.477
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 596.738 ; gain = 420.797
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -81,10 +196,39 @@ Report RTL Partitions:
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 13    
+	   2 Input     10 Bit       Adders := 9     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 6     
+	   2 Input      1 Bit       Adders := 4     
 +---Registers : 
-	                8 Bit    Registers := 1     
+	               32 Bit    Registers := 7     
+	               10 Bit    Registers := 4     
+	                8 Bit    Registers := 8     
+	                4 Bit    Registers := 12    
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 10    
 +---RAMs : 
-	               2K Bit         RAMs := 1     
+	               2K Bit         RAMs := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 6     
+	   4 Input     32 Bit        Muxes := 2     
+	   6 Input     32 Bit        Muxes := 3     
+	   4 Input     10 Bit        Muxes := 12    
+	   6 Input     10 Bit        Muxes := 4     
+	   4 Input      8 Bit        Muxes := 12    
+	   2 Input      4 Bit        Muxes := 18    
+	   4 Input      4 Bit        Muxes := 5     
+	   6 Input      4 Bit        Muxes := 5     
+	   6 Input      3 Bit        Muxes := 1     
+	  12 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 7     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 12    
+	   6 Input      1 Bit        Muxes := 28    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -92,6 +236,39 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
+Module AXI_Slave_RAM 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 13    
+	   2 Input     10 Bit       Adders := 9     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 6     
+	   2 Input      1 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 7     
+	               10 Bit    Registers := 4     
+	                8 Bit    Registers := 4     
+	                4 Bit    Registers := 12    
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 6     
+	   4 Input     32 Bit        Muxes := 2     
+	   6 Input     32 Bit        Muxes := 3     
+	   4 Input     10 Bit        Muxes := 12    
+	   6 Input     10 Bit        Muxes := 4     
+	   4 Input      8 Bit        Muxes := 12    
+	   2 Input      4 Bit        Muxes := 18    
+	   4 Input      4 Bit        Muxes := 5     
+	   6 Input      4 Bit        Muxes := 5     
+	   6 Input      3 Bit        Muxes := 1     
+	  12 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 7     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 12    
+	   6 Input      1 Bit        Muxes := 28    
 Module RAM_Module 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -110,16 +287,75 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:27 . Memory (MB): peak = 546.461 ; gain = 370.477
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 596.738 ; gain = 420.797
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3331] design RAM_Module has unconnected port address[1]
-WARNING: [Synth 8-3331] design RAM_Module has unconnected port address[0]
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port awburst[1]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port awburst[0]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wid[3]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wid[2]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wid[1]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wid[0]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wstrb[3]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wstrb[2]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wstrb[1]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wstrb[0]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port wlast
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port arburst[1]
+WARNING: [Synth 8-3331] design AXI_Slave_RAM has unconnected port arburst[0]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:27 . Memory (MB): peak = 546.461 ; gain = 370.477
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 596.738 ; gain = 420.797
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:27 . Memory (MB): peak = 546.461 ; gain = 370.477
+Finished Parallel Reinference  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 596.738 ; gain = 420.797
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -132,30 +368,133 @@ Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Block RAM:
-+------------+------------+------------------------+---+---+------------------------+---+---+---------+--------+--------+----------------------+
-|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | OUT_REG | RAMB18 | RAMB36 | Hierarchical Name    | 
-+------------+------------+------------------------+---+---+------------------------+---+---+---------+--------+--------+----------------------+
-|RAM_Module  | mem_reg    | 256 x 8                | W | R |                        |   |   | Port A  | 1      | 0      | RAM_Module/extram__2 | 
-+------------+------------+------------------------+---+---+------------------------+---+---+---------+--------+--------+----------------------+
++--------------+------------+------------------------+---+---+------------------------+---+---+---------+--------+--------+---------------------------------------------+
+|Module Name   | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | OUT_REG | RAMB18 | RAMB36 | Hierarchical Name                           | 
++--------------+------------+------------------------+---+---+------------------------+---+---+---------+--------+--------+---------------------------------------------+
+|AXI_Slave_RAM | mem_reg    | 256 x 8                | W | R |                        |   |   | Port A  | 1      | 0      | AXI_Slave_RAM/Multiple/RAM_Module/extram__2 | 
++--------------+------------+------------------------+---+---+------------------------+---+---+---------+--------+--------+---------------------------------------------+
 
 Note: The table shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. "Hierarchical Name" reflects the Block RAM name as it appears in the hierarchical module and only part of it is displayed.
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\rresp_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\rresp_reg[1] )
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][31] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][30] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][29] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][28] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][27] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][26] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][25] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][24] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][23] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][22] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][21] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][20] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][19] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][18] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][17] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][16] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][15] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][14] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][13] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][12] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][11] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[0][10] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][31] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][30] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][29] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][28] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][27] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][26] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][25] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][24] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][23] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][22] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][21] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][20] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][19] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][18] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][17] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][16] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][15] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][14] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][13] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][12] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][11] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_queue_reg[1][10] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[31] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[30] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[29] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[28] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[27] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[26] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[25] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[24] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[23] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[22] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[21] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[20] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[19] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[18] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[17] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[16] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[15] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[14] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[13] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[12] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[11] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\read_address_reg[10] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[31] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[30] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[29] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[28] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[27] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[26] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[25] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[24] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[23] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[22] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[21] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[20] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[19] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[18] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[17] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[16] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[15] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[14] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[13] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[12] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[11] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_reg[10] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_queue_reg[0][31] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_queue_reg[0][30] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_queue_reg[0][29] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_queue_reg[0][28] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_queue_reg[0][27] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_queue_reg[0][26] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_queue_reg[0][25] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_queue_reg[0][24] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_queue_reg[0][23] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_queue_reg[0][22] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_queue_reg[0][21] ) is unused and will be removed from module AXI_Slave_RAM.
+WARNING: [Synth 8-3332] Sequential element (\write_address_queue_reg[0][20] ) is unused and will be removed from module AXI_Slave_RAM.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:28 . Memory (MB): peak = 546.461 ; gain = 370.477
+Finished Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 596.738 ; gain = 420.797
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:28 . Memory (MB): peak = 546.461 ; gain = 370.477
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 596.738 ; gain = 420.797
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:28 . Memory (MB): peak = 546.461 ; gain = 370.477
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 596.738 ; gain = 420.797
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
@@ -163,10 +502,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:48 . Memory (MB): peak = 546.941 ; gain = 370.957
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 596.738 ; gain = 420.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:48 . Memory (MB): peak = 546.945 ; gain = 370.961
+Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 596.738 ; gain = 420.797
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -178,8 +517,11 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-4480] The timing for the instance mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance mem_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:48 . Memory (MB): peak = 556.652 ; gain = 380.668
+Finished Technology Mapping : Time (s): cpu = 00:00:45 ; elapsed = 00:00:49 . Memory (MB): peak = 597.043 ; gain = 421.102
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -196,8 +538,16 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin \genblk1[0].R :address[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin \genblk1[0].R :address[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin \genblk1[1].R :address[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin \genblk1[1].R :address[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin \genblk1[2].R :address[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin \genblk1[2].R :address[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin \genblk1[3].R :address[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin \genblk1[3].R :address[0] to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:48 . Memory (MB): peak = 556.652 ; gain = 380.668
+Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:50 . Memory (MB): peak = 597.043 ; gain = 421.102
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -210,7 +560,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:48 . Memory (MB): peak = 556.652 ; gain = 380.668
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:50 . Memory (MB): peak = 597.043 ; gain = 421.102
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -233,26 +583,38 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |BUFG     |     1|
-|2     |LUT1     |     1|
-|3     |RAMB18E1 |     1|
-|4     |IBUF     |    19|
-|5     |OBUF     |     8|
+|2     |CARRY4   |    13|
+|3     |LUT1     |    11|
+|4     |LUT2     |    14|
+|5     |LUT3     |    45|
+|6     |LUT4     |    31|
+|7     |LUT5     |    78|
+|8     |LUT6     |   317|
+|9     |RAMB18E1 |     4|
+|10    |FDCE     |    57|
+|11    |FDRE     |   172|
+|12    |IBUF     |    79|
+|13    |OBUF     |    50|
 +------+---------+------+
 
 Report Instance Areas: 
-+------+---------+-------+------+
-|      |Instance |Module |Cells |
-+------+---------+-------+------+
-|1     |top      |       |    30|
-+------+---------+-------+------+
++------+-----------------+--------------+------+
+|      |Instance         |Module        |Cells |
++------+-----------------+--------------+------+
+|1     |top              |              |   872|
+|2     |  \genblk1[0].R  |RAM_Module__1 |     2|
+|3     |  \genblk1[1].R  |RAM_Module__2 |     2|
+|4     |  \genblk1[2].R  |RAM_Module__3 |     2|
+|5     |  \genblk1[3].R  |RAM_Module    |     2|
++------+-----------------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:49 . Memory (MB): peak = 556.652 ; gain = 380.668
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:00:50 . Memory (MB): peak = 597.043 ; gain = 421.102
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:31 . Memory (MB): peak = 556.652 ; gain = 97.406
-Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:49 . Memory (MB): peak = 556.652 ; gain = 380.668
+Synthesis finished with 0 errors, 0 critical warnings and 164 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 597.043 ; gain = 89.422
+Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:00:51 . Memory (MB): peak = 597.043 ; gain = 421.102
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 96 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -260,8 +622,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-17 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+130 Infos, 142 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:42 . Memory (MB): peak = 556.652 ; gain = 366.371
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 556.652 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Thu May 31 11:51:23 2018...
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 597.043 ; gain = 406.574
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 597.043 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Jun 02 03:34:56 2018...

@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Sat Jun 02 03:42:26 2018
+# Process ID: 12556
+# Log file: C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.runs/impl_1/AXI_Slave_RAM.vdi
+# Journal file: C:/Users/vamsi/Desktop/AXI_Slave_Interface/AXI_RAM_SLAVE/AXI_RAM_SLAVE.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source AXI_Slave_RAM.tcl -notrace

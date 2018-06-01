@@ -1,0 +1,38 @@
+Vivado Simulator 2015.2
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto cf8bc1cb6eef46aa844a684685ef5b32 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot AXI_RAM_Slave_tb_func_synth xil_defaultlib.AXI_RAM_Slave_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module unisims_ver.ffsrce_fdce
+Compiling module unisims_ver.FDCE
+Compiling module unisims_ver.x_lut3_mux4
+Compiling module unisims_ver.x_lut3_mux4_reduced_0
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module unisims_ver.sffsrce_fdre
+Compiling module unisims_ver.FDRE
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.OBUF
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.RB18_INTERNAL_VLOG(DOA_REG=0,DOB...
+Compiling module unisims_ver.RAMB18E1(RDADDR_COLLISION_HWCONF...
+Compiling module xil_defaultlib.RAM_Module__1
+Compiling module xil_defaultlib.RAM_Module__2
+Compiling module xil_defaultlib.RAM_Module__3
+Compiling module xil_defaultlib.RAM_Module
+Compiling module unisims_ver.CARRY4
+Compiling module xil_defaultlib.AXI_Slave_RAM
+Compiling module xil_defaultlib.AXI_RAM_Slave_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 3 sub-compilation(s) to finish...
+Built simulation snapshot AXI_RAM_Slave_tb_func_synth

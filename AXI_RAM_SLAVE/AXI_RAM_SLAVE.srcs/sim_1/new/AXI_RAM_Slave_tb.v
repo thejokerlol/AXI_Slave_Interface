@@ -39,7 +39,7 @@ module AXI_RAM_Slave_tb(
     reg[3:0] awid;
     reg[31:0] awaddr;
     reg[3:0] awlen;//maximum of 16 ttransfers
-    reg[2:0] awsize;//max is 7 ,128 length, not sure
+    reg[1:0] awsize;//max is 7 ,128 length, not sure
     reg[1:0] awburst;//burst type of either fixed,incremental or wrapping burst
     reg awvalid;
     wire awready;
@@ -64,7 +64,7 @@ module AXI_RAM_Slave_tb(
     reg[3:0] arid;
     reg[31:0] araddr;
     reg[3:0] arlen;
-    reg[2:0] arsize;
+    reg[1:0] arsize;
     reg[1:0] arburst;
     reg arvalid;
     wire arready;
@@ -173,6 +173,7 @@ module AXI_RAM_Slave_tb(
     
     initial
     begin
+        #100
         #4 reset=0;
         #6 reset=1;
         

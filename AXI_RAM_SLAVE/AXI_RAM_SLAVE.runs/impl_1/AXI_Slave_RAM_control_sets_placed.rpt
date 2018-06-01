@@ -1,0 +1,74 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
+| Date         : Sat Jun 02 03:43:23 2018
+| Host         : G-TIRUPATHI running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file AXI_Slave_RAM_control_sets_placed.rpt
+| Design       : AXI_Slave_RAM
+| Device       : xc7a100t
+------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------+-------+
+|                               Status                              | Count |
++-------------------------------------------------------------------+-------+
+| Number of unique control sets                                     |    21 |
+| Minimum Number of register sites lost to control set restrictions |    43 |
++-------------------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               8 |            4 |
+| No           | No                    | Yes                    |              17 |            6 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |             164 |           77 |
+| Yes          | No                    | Yes                    |              40 |           16 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++----------------+--------------------------------+------------------------------------------------+------------------+----------------+
+|  Clock Signal  |          Enable Signal         |                Set/Reset Signal                | Slice Load Count | Bel Load Count |
++----------------+--------------------------------+------------------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG | rid[3]_i_1_n_0                 | FSM_sequential_ram_controller_state[2]_i_2_n_0 |                1 |              4 |
+|  clk_IBUF_BUFG | bid[3]_i_1_n_0                 | FSM_sequential_ram_controller_state[2]_i_2_n_0 |                1 |              4 |
+|  clk_IBUF_BUFG |                                |                                                |                4 |              8 |
+|  clk_IBUF_BUFG | rdata[7]_i_1_n_0               | FSM_sequential_ram_controller_state[2]_i_2_n_0 |                4 |              8 |
+|  clk_IBUF_BUFG | rdata[15]_i_1_n_0              | FSM_sequential_ram_controller_state[2]_i_2_n_0 |                4 |              8 |
+|  clk_IBUF_BUFG | data_in[3][7]_i_1_n_0          |                                                |                4 |              8 |
+|  clk_IBUF_BUFG | data_in[2][7]_i_1_n_0          |                                                |                4 |              8 |
+|  clk_IBUF_BUFG | data_in[1][7]_i_1_n_0          |                                                |                4 |              8 |
+|  clk_IBUF_BUFG | data_in[0][7]_i_1_n_0          |                                                |                4 |              8 |
+|  clk_IBUF_BUFG | address[3][9]_i_1_n_0          |                                                |                6 |              8 |
+|  clk_IBUF_BUFG | address[2][9]_i_1_n_0          |                                                |                6 |              8 |
+|  clk_IBUF_BUFG | address[1][9]_i_1_n_0          |                                                |                6 |              8 |
+|  clk_IBUF_BUFG | address[0][9]_i_1_n_0          |                                                |                8 |              8 |
+|  clk_IBUF_BUFG | write_address[9]_i_1_n_0       |                                                |                4 |             10 |
+|  clk_IBUF_BUFG | read_address[9]_i_1_n_0        |                                                |                8 |             10 |
+|  clk_IBUF_BUFG | rdata[31]_i_1_n_0              | FSM_sequential_ram_controller_state[2]_i_2_n_0 |                6 |             16 |
+|  clk_IBUF_BUFG |                                | FSM_sequential_ram_controller_state[2]_i_2_n_0 |                6 |             17 |
+|  clk_IBUF_BUFG | write_size_queue[1][1]_i_1_n_0 |                                                |                4 |             20 |
+|  clk_IBUF_BUFG | write_size_queue[0][1]_i_1_n_0 |                                                |                5 |             20 |
+|  clk_IBUF_BUFG | read_len_queue[1][3]_i_1_n_0   |                                                |                7 |             20 |
+|  clk_IBUF_BUFG | read_len_queue[0][3]_i_1_n_0   |                                                |                7 |             20 |
++----------------+--------------------------------+------------------------------------------------+------------------+----------------+
+
+

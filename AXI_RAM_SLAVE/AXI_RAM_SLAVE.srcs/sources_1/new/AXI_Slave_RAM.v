@@ -160,7 +160,19 @@ module AXI_Slave_RAM(
     wire[7:0] data_out[3:0];
     
     
-    
+       
+    //process to control RAM signals
+    parameter RAM_CONTROLLER_IDLE=4'b0000;
+    parameter WAIT_FOR_CLK_CYCLE=4'b0001;
+    parameter PUT_DATA_ON_BUS=4'b0010;
+    parameter WAIT_FOR_RREADY=4'b0011;
+    parameter WAIT_FOR_WVALID=4'b0100;
+    parameter WAIT_FOR_BREADY=4'b0101;
+    reg[2:0] no_of_transfers;
+    reg[3:0] ram_controller_state;
+    reg[1:0] read_size;
+    reg[31:0] read_address;
+    reg[31:0] write_address;
     
     genvar ram_bank;
     generate
@@ -199,9 +211,7 @@ module AXI_Slave_RAM(
     begin
         if(!reset)
         begin
-            arready<=HIGH;
             read_address_write_pointer<=0;
-            flip=0;
         end
         else
         begin
@@ -347,19 +357,7 @@ module AXI_Slave_RAM(
             write_address_queue_full=0;
         end
    end     
-   
-   //process to control RAM signals
-   parameter RAM_CONTROLLER_IDLE=4'b0000;
-   parameter WAIT_FOR_CLK_CYCLE=4'b0001;
-   parameter PUT_DATA_ON_BUS=4'b0010;
-   parameter WAIT_FOR_RREADY=4'b0011;
-   parameter WAIT_FOR_WVALID=4'b0100;
-   parameter WAIT_FOR_BREADY=4'b0101;
-   reg[2:0] no_of_transfers;
-   reg[3:0] ram_controller_state;
-   reg[1:0] read_size;
-   reg[31:0] read_address;
-   reg[31:0] write_address;
+
    always@(posedge clk or negedge reset)
    begin
         if(!reset)
