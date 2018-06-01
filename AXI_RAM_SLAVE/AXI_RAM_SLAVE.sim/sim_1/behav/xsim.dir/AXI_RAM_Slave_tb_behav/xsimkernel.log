@@ -1,0 +1,7 @@
+Running: xsim.dir/AXI_RAM_Slave_tb_behav/xsimk.exe -simmode gui -wdb AXI_RAM_Slave_tb_behav.wdb -simrunnum 0 -socket 49510
+Design successfully loaded
+Design Loading Memory Usage: 17880 KB (Peak: 17880 KB)
+Design Loading CPU Usage: 124 ms
+Simulation completed
+Simulation Memory Usage: 18324 KB (Peak: 18324 KB)
+Simulation CPU Usage: 155 ms

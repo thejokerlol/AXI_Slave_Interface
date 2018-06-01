@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="AXI_RAM_Slave_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="AXI_RAM_Slave_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="43" />
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/awid" type="array">
+      <obj_property name="ElementShortName">awid[3:0]</obj_property>
+      <obj_property name="ObjectShortName">awid[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/awaddr" type="array">
+      <obj_property name="ElementShortName">awaddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">awaddr[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/awlen" type="array">
+      <obj_property name="ElementShortName">awlen[3:0]</obj_property>
+      <obj_property name="ObjectShortName">awlen[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/awsize" type="array">
+      <obj_property name="ElementShortName">awsize[2:0]</obj_property>
+      <obj_property name="ObjectShortName">awsize[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/awburst" type="array">
+      <obj_property name="ElementShortName">awburst[1:0]</obj_property>
+      <obj_property name="ObjectShortName">awburst[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/awvalid" type="logic">
+      <obj_property name="ElementShortName">awvalid</obj_property>
+      <obj_property name="ObjectShortName">awvalid</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/awready" type="logic">
+      <obj_property name="ElementShortName">awready</obj_property>
+      <obj_property name="ObjectShortName">awready</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/wid" type="array">
+      <obj_property name="ElementShortName">wid[3:0]</obj_property>
+      <obj_property name="ObjectShortName">wid[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/wdata" type="array">
+      <obj_property name="ElementShortName">wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wdata[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/wstrb" type="array">
+      <obj_property name="ElementShortName">wstrb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">wstrb[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/wlast" type="logic">
+      <obj_property name="ElementShortName">wlast</obj_property>
+      <obj_property name="ObjectShortName">wlast</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/wvalid" type="logic">
+      <obj_property name="ElementShortName">wvalid</obj_property>
+      <obj_property name="ObjectShortName">wvalid</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/wready" type="logic">
+      <obj_property name="ElementShortName">wready</obj_property>
+      <obj_property name="ObjectShortName">wready</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/bid" type="array">
+      <obj_property name="ElementShortName">bid[3:0]</obj_property>
+      <obj_property name="ObjectShortName">bid[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/bresp" type="array">
+      <obj_property name="ElementShortName">bresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">bresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/bvalid" type="logic">
+      <obj_property name="ElementShortName">bvalid</obj_property>
+      <obj_property name="ObjectShortName">bvalid</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/bready" type="logic">
+      <obj_property name="ElementShortName">bready</obj_property>
+      <obj_property name="ObjectShortName">bready</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/arid" type="array">
+      <obj_property name="ElementShortName">arid[3:0]</obj_property>
+      <obj_property name="ObjectShortName">arid[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/araddr" type="array">
+      <obj_property name="ElementShortName">araddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">araddr[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/arlen" type="array">
+      <obj_property name="ElementShortName">arlen[3:0]</obj_property>
+      <obj_property name="ObjectShortName">arlen[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/arsize" type="array">
+      <obj_property name="ElementShortName">arsize[2:0]</obj_property>
+      <obj_property name="ObjectShortName">arsize[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/arburst" type="array">
+      <obj_property name="ElementShortName">arburst[1:0]</obj_property>
+      <obj_property name="ObjectShortName">arburst[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/arvalid" type="logic">
+      <obj_property name="ElementShortName">arvalid</obj_property>
+      <obj_property name="ObjectShortName">arvalid</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/arready" type="logic">
+      <obj_property name="ElementShortName">arready</obj_property>
+      <obj_property name="ObjectShortName">arready</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/rid" type="array">
+      <obj_property name="ElementShortName">rid[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rid[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/rdata" type="array">
+      <obj_property name="ElementShortName">rdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/rresp" type="array">
+      <obj_property name="ElementShortName">rresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">rresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/rlast" type="logic">
+      <obj_property name="ElementShortName">rlast</obj_property>
+      <obj_property name="ObjectShortName">rlast</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/rvalid" type="logic">
+      <obj_property name="ElementShortName">rvalid</obj_property>
+      <obj_property name="ObjectShortName">rvalid</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/rready" type="logic">
+      <obj_property name="ElementShortName">rready</obj_property>
+      <obj_property name="ObjectShortName">rready</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/ram_controller_state" type="array">
+      <obj_property name="ElementShortName">ram_controller_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_controller_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/write_address_queue" type="array">
+      <obj_property name="ElementShortName">write_address_queue[0:1][31:0]</obj_property>
+      <obj_property name="ObjectShortName">write_address_queue[0:1][31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/write_address_write_pointer" type="logic">
+      <obj_property name="ElementShortName">write_address_write_pointer</obj_property>
+      <obj_property name="ObjectShortName">write_address_write_pointer</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/write_address_queue_full" type="logic">
+      <obj_property name="ElementShortName">write_address_queue_full</obj_property>
+      <obj_property name="ObjectShortName">write_address_queue_full</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/write_flip" type="logic">
+      <obj_property name="ElementShortName">write_flip</obj_property>
+      <obj_property name="ObjectShortName">write_flip</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/write_address_queue" type="array">
+      <obj_property name="ElementShortName">write_address_queue[0:1][31:0]</obj_property>
+      <obj_property name="ObjectShortName">write_address_queue[0:1][31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/write_address_queue[0]" type="array">
+         <obj_property name="ElementShortName">[0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">write_address_queue[0][31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/write_address_queue[1]" type="array">
+         <obj_property name="ElementShortName">[1][31:0]</obj_property>
+         <obj_property name="ObjectShortName">write_address_queue[1][31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/address" type="array">
+      <obj_property name="ElementShortName">address[3:0][9:0]</obj_property>
+      <obj_property name="ObjectShortName">address[3:0][9:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[3:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[3:0][7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/data_out" type="array">
+      <obj_property name="ElementShortName">data_out[3:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[3:0][7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/read" type="array">
+      <obj_property name="ElementShortName">read[3:0]</obj_property>
+      <obj_property name="ObjectShortName">read[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/enable_RW" type="array">
+      <obj_property name="ElementShortName">enable_RW[3:0]</obj_property>
+      <obj_property name="ObjectShortName">enable_RW[3:0]</obj_property>
+   </wvobject>
+</wave_config>

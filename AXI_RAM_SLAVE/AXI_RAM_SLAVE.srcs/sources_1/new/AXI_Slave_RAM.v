@@ -94,13 +94,13 @@ module AXI_Slave_RAM(
     input[3:0] wstrb;
     input wlast;
     input wvalid;
-    output wready;
+    output reg wready;
     
     //write response channel
     
-    output[3:0] bid;
-    output[1:0] bresp;
-    output bvalid;
+    output reg[3:0] bid;
+    output reg[1:0] bresp;
+    output reg bvalid;
     input bready;
     
     //read address channel
@@ -114,11 +114,11 @@ module AXI_Slave_RAM(
     
     //read data channel signals
     
-    output[3:0] rid;
-    output[31:0] rdata;
-    output[1:0] rresp;
-    output rlast;
-    output rvalid;
+    output reg[3:0] rid;
+    output reg[31:0] rdata;
+    output reg[1:0] rresp;
+    output reg rlast;
+    output reg rvalid;
     input rready; 
     
     //read queue signals
@@ -216,11 +216,10 @@ module AXI_Slave_RAM(
         if(!reset)
         begin
             write_address_write_pointer<=0;
-            flip=0;
         end
         else
         begin
-            if(!read_address_queue_full)//not full
+            if(!write_address_queue_full)//not full
             begin
                 if(awvalid==HIGH)
                 begin
@@ -229,10 +228,10 @@ module AXI_Slave_RAM(
                     write_len_queue[write_address_write_pointer]<=awlen;
                     write_size_queue[write_address_write_pointer]<=awsize;
                     write_burst_queue[write_address_write_pointer]<=awburst;
-                    write_address_write_pointer<=0;
+                    
                     if(write_address_read_pointer==1)
-                    begin 
-                        write_flip<=1;
+                    begin
+                        write_address_write_pointer<=0;                     
                     end
                     else
                     begin
@@ -242,6 +241,23 @@ module AXI_Slave_RAM(
             end
         end
     end
+   //process for write flip
+   
+   always@(posedge clk or negedge reset)
+   begin
+        if(!reset)
+        begin
+            write_flip=0;
+        end
+        else
+        begin
+            if((!write_address_queue_full) && (awvalid==HIGH) && (write_address_write_pointer==1))
+            begin
+                write_flip<=!write_flip;
+            end
+        end
+   end
+   
         
    //process for read queue empty
    
@@ -302,15 +318,27 @@ module AXI_Slave_RAM(
    parameter WAIT_FOR_CLK_CYCLE=4'b0001;
    parameter PUT_DATA_ON_BUS=4'b0010;
    parameter WAIT_FOR_RREADY=4'b0011;
+   parameter WAIT_FOR_WVALID=4'b0100;
+   parameter WAIT_FOR_BREADY=4'b0101;
    reg[2:0] no_of_transfers;
    reg[3:0] ram_controller_state;
    reg[1:0] read_size;
+   reg[31:0] read_address;
+   reg[31:0] write_address;
    always@(posedge clk or negedge reset)
    begin
         if(!reset)
         begin
             ram_controller_state<=RAM_CONTROLLER_IDLE;
+            write_address_read_pointer<=0;
+            read_address_read_pointer<=0;
             no_of_transfers<=0;
+            bid<=0;
+            bvalid<=0;
+            bresp<=0;
+            wready<=0;
+            rvalid<=0;
+            rdata<=0;
         end
         else
         begin
@@ -320,71 +348,66 @@ module AXI_Slave_RAM(
                     if(!read_address_queue_empty)
                     begin
                         case(read_size_queue[read_address_read_pointer])
-                            2'b00://one byte
+                            2'b001://one byte
                             begin
-                                address[read_address_queue[read_address_read_pointer][1:0]]<=read_address_queue[read_address_read_pointer];
-                                enable_RW[read_address_read_pointer[1:0]]<=1;
-                                read[read_address_read_pointer[1:0]]<=1;
+                                address[read_address_queue[read_address_read_pointer][1:0]%4]<=read_address_queue[read_address_read_pointer];
+                                enable_RW[read_address_queue[read_address_read_pointer][1:0]%4]<=1;
+                                read[read_address_queue[read_address_read_pointer][1:0]%4]<=1;
                                 
                             end
-                            2'b01://two bytes
+                            2'b010://two bytes
                             begin
                                 //first byte
-                                address[read_address_queue[read_address_read_pointer][1:0]]<=read_address_queue[read_address_read_pointer];
-                                enable_RW[read_address_read_pointer[1:0]]<=1;
-                                read[read_address_read_pointer[1:0]]<=1;
+                                address[read_address_queue[read_address_read_pointer][1:0]%4]<=read_address_queue[read_address_read_pointer];
+                                enable_RW[read_address_queue[read_address_read_pointer][1:0]%4]<=1;
+                                read[read_address_queue[read_address_read_pointer][1:0]%4]<=1;
                                 
                                 //second byte
                                 address[(read_address_queue[read_address_read_pointer][1:0]+1)%4]<=read_address_queue[read_address_read_pointer]+1;
-                                enable_RW[(read_address_read_pointer[1:0]+1)%4]<=1;
-                                read[(read_address_read_pointer[1:0]+1)%4]<=1;
+                                enable_RW[(read_address_queue[read_address_read_pointer][1:0]+1)%4]<=1;
+                                read[(read_address_queue[read_address_read_pointer][1:0]+1)%4]<=1;
                             end
-                            2'b10://4 bytes
+                            2'b100://4 bytes
                             begin
                                //first byte
-                                address[read_address_queue[read_address_read_pointer][1:0]]<=read_address_queue[read_address_read_pointer];
-                                enable_RW[read_address_read_pointer[1:0]]<=1;
-                                read[read_address_read_pointer[1:0]]<=1;
+                                address[read_address_queue[read_address_read_pointer][1:0]%4]<=read_address_queue[read_address_read_pointer];
+                                enable_RW[read_address_queue[read_address_read_pointer][1:0]%4]<=1;
+                                read[read_address_queue[read_address_read_pointer][1:0]%4]<=1;
                                 
                                 //second byte
                                 address[(read_address_queue[read_address_read_pointer][1:0]+1)%4]<=read_address_queue[read_address_read_pointer]+1;
-                                enable_RW[(read_address_read_pointer[1:0]+1)%4]<=1;
-                                read[(read_address_read_pointer[1:0]+1)%4]<=1;                                
+                                enable_RW[(read_address_queue[read_address_read_pointer][1:0]+1)%4]<=1;
+                                read[(read_address_queue[read_address_read_pointer][1:0]+1)%4]<=1;                                
                                 
                                 //third byte
                                 address[(read_address_queue[read_address_read_pointer][1:0]+2)%4]<=read_address_queue[read_address_read_pointer]+2;
-                                enable_RW[(read_address_read_pointer[1:0]+2)%4]<=1;
-                                read[(read_address_read_pointer[1:0]+2)%4]<=1;                                
+                                enable_RW[(read_address_queue[read_address_read_pointer][1:0]+2)%4]<=1;
+                                read[(read_address_queue[read_address_read_pointer][1:0]+2)%4]<=1;                                
                                 
                                 //fourth byte
                                 address[(read_address_queue[read_address_read_pointer][1:0]+3)%4]<=read_address_queue[read_address_read_pointer]+3;
-                                enable_RW[(read_address_read_pointer[1:0]+3)%4]<=1;
-                                read[(read_address_read_pointer[1:0]+3)%4]<=1;                                
+                                enable_RW[(read_address_queue[read_address_read_pointer][1:0]+3)%4]<=1;
+                                read[(read_address_queue[read_address_read_pointer][1:0]+3)%4]<=1;                                
                             end
                             default://an error
                             begin
                             end
-                        endcase
-                        if(read_address_read_pointer==0)
-                        begin
-                            read_address_read_pointer<=read_address_read_pointer+1;
-                            flip<=!flip;
-                        end
-                        else
-                        begin
-                            read_address_read_pointer<=0;
-                        end
+                            endcase
+                        read_address<=read_address_queue[read_address_read_pointer]+(2**(read_size_queue[read_address_read_pointer]));
                         ram_controller_state<=WAIT_FOR_CLK_CYCLE;
                     end
                     else if(!write_address_queue_empty)
                     begin
+                        ram_controller_state<=WAIT_FOR_WVALID;
+                        wready=1;
+                        write_address<=write_address_queue[write_address_read_pointer];
                     end
                     else
                     begin
                         ram_controller_state<=RAM_CONTROLLER_IDLE;
                     end
                 end
-                WAIT_FOR_CLK_CYCLE:
+/*                WAIT_FOR_CLK_CYCLE:
                 begin
                     ram_controller_state<=PUT_DATA_ON_BUS;
                     enable_RW[0]<=LOW;
@@ -402,8 +425,8 @@ module AXI_Slave_RAM(
                         end
                         2'b01://two bytes
                         begin
-                            rdata[7:0]<=data_out[read_address_queue[address%4];
-                            rdata[15:8]<=data_out[(read_address_queue[(address+1)%4];
+                            rdata[7:0]<=data_out[address%4];
+                            rdata[15:8]<=data_out[(address+1)%4];
                         end
                         2'b10://four bytes
                         begin
@@ -423,51 +446,51 @@ module AXI_Slave_RAM(
                 begin
                     if(rready==HIGH)
                     begin
-                        if(no_of_transfers<(read_len_queue[read_address_read_pointer-1]-1))
+                        if(no_of_transfers<(read_len_queue[read_address_read_pointer]-1))
                         begin
                             //address<=address+(2**(read_size_queue[read_address_read_pointer-1]));
                             case(read_size_queue[read_address_read_pointer])
                                 2'b00://one byte
                                 begin
-                                    address[(address+(2**(read_size_queue[read_address_read_pointer-1])))%4]<=address+(2**(read_size_queue[read_address_read_pointer-1]));
-                                    enable_RW[(address+(2**(read_size_queue[read_address_read_pointer-1])))%4]<=1;
-                                    read[(address+(2**(read_size_queue[read_address_read_pointer-1])))%4]<=1;
+                                    address[(address+(2**(read_size_queue[read_address_read_pointer])))%4]<=address+(2**(read_size_queue[read_address_read_pointer]));
+                                    enable_RW[(address+(2**(read_size_queue[read_address_read_pointer])))%4]<=1;
+                                    read[(address+(2**(read_size_queue[read_address_read_pointer])))%4]<=1;
                                     
                                 end
                                 2'b01://two bytes
                                 begin
                                     //first byte
-                                    address[(address+(2**(read_size_queue[read_address_read_pointer-1])))%4]<=address+(2**(read_size_queue[read_address_read_pointer-1]));
-                                    enable_RW[(address+(2**(read_size_queue[read_address_read_pointer-1])))%4]<=1;
-                                    read[(address+(2**(read_size_queue[read_address_read_pointer-1])))%4]<=1;
+                                    address[(address+(2**(read_size_queue[read_address_read_pointer])))%4]<=address+(2**(read_size_queue[read_address_read_pointer]));
+                                    enable_RW[(address+(2**(read_size_queue[read_address_read_pointer])))%4]<=1;
+                                    read[(address+(2**(read_size_queue[read_address_read_pointer])))%4]<=1;
                                     
                                     //second byte
-                                    address[(address+(2**(read_size_queue[read_address_read_pointer-1]))+1)%4]<=address+(2**(read_size_queue[read_address_read_pointer-1]))+1;
-                                    enable_RW[(address+(2**(read_size_queue[read_address_read_pointer-1]))+1)%4]<=1;
-                                    read[(address+(2**(read_size_queue[read_address_read_pointer-1]))+1)%4]<=1;
+                                    address[(address+(2**(read_size_queue[read_address_read_pointer]))+1)%4]<=address+(2**(read_size_queue[read_address_read_pointer]))+1;
+                                    enable_RW[(address+(2**(read_size_queue[read_address_read_pointer]))+1)%4]<=1;
+                                    read[(address+(2**(read_size_queue[read_address_read_pointer]))+1)%4]<=1;
                                     
                                 end
                                 2'b10://4 bytes
                                 begin
                                      //first byte
-                                    address[(address+(2**(read_size_queue[read_address_read_pointer-1])))%4]<=address+(2**(read_size_queue[read_address_read_pointer-1]));
-                                    enable_RW[(address+(2**(read_size_queue[read_address_read_pointer-1])))%4]<=1;
-                                    read[(address+(2**(read_size_queue[read_address_read_pointer-1])))%4]<=1;
+                                    address[(address+(2**(read_size_queue[read_address_read_pointer])))%4]<=address+(2**(read_size_queue[read_address_read_pointer]));
+                                    enable_RW[(address+(2**(read_size_queue[read_address_read_pointer])))%4]<=1;
+                                    read[(address+(2**(read_size_queue[read_address_read_pointer])))%4]<=1;
                                     
                                     //second byte
-                                    address[(address+(2**(read_size_queue[read_address_read_pointer-1]))+1)%4]<=address+(2**(read_size_queue[read_address_read_pointer-1]))+1;
-                                    enable_RW[(address+(2**(read_size_queue[read_address_read_pointer-1]))+1)%4]<=1;
-                                    read[(address+(2**(read_size_queue[read_address_read_pointer-1]))+1)%4]<=1;                             
+                                    address[(address+(2**(read_size_queue[read_address_read_pointer]))+1)%4]<=address+(2**(read_size_queue[read_address_read_pointer]))+1;
+                                    enable_RW[(address+(2**(read_size_queue[read_address_read_pointer]))+1)%4]<=1;
+                                    read[(address+(2**(read_size_queue[read_address_read_pointer]))+1)%4]<=1;                             
                                     
                                     //third byte
-                                    address[(address+(2**(read_size_queue[read_address_read_pointer-1]))+2)%4]<=address+(2**(read_size_queue[read_address_read_pointer-1]))+2;
-                                    enable_RW[(address+(2**(read_size_queue[read_address_read_pointer-1]))+2)%4]<=1;
-                                    read[(address+(2**(read_size_queue[read_address_read_pointer-1]))+2)%4]<=1;
+                                    address[(address+(2**(read_size_queue[read_address_read_pointer]))+2)%4]<=address+(2**(read_size_queue[read_address_read_pointer]))+2;
+                                    enable_RW[(address+(2**(read_size_queue[read_address_read_pointer]))+2)%4]<=1;
+                                    read[(address+(2**(read_size_queue[read_address_read_pointer]))+2)%4]<=1;
                                     
                                     //fourth byte
-                                    address[(address+(2**(read_size_queue[read_address_read_pointer-1]))+3)%4]<=address+(2**(read_size_queue[read_address_read_pointer-1]))+3;
-                                    enable_RW[(address+(2**(read_size_queue[read_address_read_pointer-1]))+3)%4]<=1;
-                                    read[(address+(2**(read_size_queue[read_address_read_pointer-1]))+3)%4]<=1;                             
+                                    address[(address+(2**(read_size_queue[read_address_read_pointer]))+3)%4]<=address+(2**(read_size_queue[read_address_read_pointer]))+3;
+                                    enable_RW[(address+(2**(read_size_queue[read_address_read_pointer]))+3)%4]<=1;
+                                    read[(address+(2**(read_size_queue[read_address_read_pointer]))+3)%4]<=1;                             
                                 end
                                 default://an error
                                 begin
@@ -478,6 +501,15 @@ module AXI_Slave_RAM(
                         end
                         else
                         begin
+                            if(read_address_read_pointer==1)
+                            begin
+                                read_address_read_pointer<=0;
+                            end
+                            else
+                            begin
+                                read_address_read_pointer<=read_address_read_pointer+1;
+                            end
+                            
                             ram_controller_state<=RAM_CONTROLLER_IDLE;
                         end
                         no_of_transfers<=no_of_transfers+1;
@@ -485,6 +517,116 @@ module AXI_Slave_RAM(
                     else
                     begin
                         ram_controller_state<=WAIT_FOR_RREADY;
+                    end
+                end*/
+                WAIT_FOR_WVALID:
+                begin
+                    if(no_of_transfers<=(write_len_queue[write_address_read_pointer]-1))
+                    begin
+                        if(wvalid==1)
+                        begin
+                            read[0]<=0;
+                            read[1]<=0;
+                            read[2]<=0;
+                            read[3]<=0;
+                            enable_RW[0]<=0;
+                            enable_RW[1]<=0;
+                            enable_RW[2]<=0;
+                            enable_RW[3]<=0;
+                            case(write_size_queue[write_address_read_pointer])
+                                2'b00://one byte
+                                begin
+                                    address[write_address%4]<=write_address;
+                                    enable_RW[write_address%4]<=1;
+                                    read[write_address%4]<=0;
+                                    data_in[write_address%4]<=wdata[write_address%4];
+                                    
+                                end
+                                2'b01://two bytes
+                                begin
+                                    //first byte
+                                    address[write_address%4]<=write_address;
+                                    enable_RW[write_address%4]<=1;
+                                    read[write_address%4]<=0;
+                                    data_in[write_address%4]<=wdata[write_address%4];
+                                    
+                                    //second byte
+                                    address[(write_address+1)%4]<=write_address+1;
+                                    enable_RW[(write_address+1)%4]<=1;
+                                    read[(write_address+1)%4]<=0;
+                                    data_in[(write_address+1)%4]<=wdata[(write_address+1)%4];
+                                end
+                                2'b10://4 bytes
+                                begin
+                                    //first byte
+                                    address[write_address%4]<=write_address;
+                                    enable_RW[write_address%4]<=1;
+                                    read[write_address%4]<=0;
+                                    data_in[write_address%4]<=wdata[write_address%4];
+                                    
+                                    //second byte
+                                    address[(write_address+1)%4]<=write_address+1;
+                                    enable_RW[(write_address+1)%4]<=1;
+                                    read[(write_address+1)%4]<=0;
+                                    data_in[(write_address+1)%4]<=wdata[(write_address+1)%4];                             
+                                    
+                                    //third byte
+                                    address[(write_address+2)%4]<=write_address+2;
+                                    enable_RW[(write_address+2)%4]<=1;
+                                    read[(write_address+2)%4]<=0;
+                                    data_in[(write_address+2)%4]<=wdata[(write_address+2)%4]; 
+                                    
+                                    //fourth byte
+                                    address[(write_address+3)%4]<=write_address+3;
+                                    enable_RW[(write_address+3)%4]<=1;
+                                    read[(write_address+3)%4]<=0;
+                                    data_in[(write_address+3)%4]<=wdata[(write_address+3)%4]; 
+                                                                
+                                end
+                                default://an error
+                                begin
+                                end
+                            endcase
+                            write_address<=write_address+(2**(write_size_queue[write_address_read_pointer]));
+                            no_of_transfers<=no_of_transfers+1;
+                            ram_controller_state<=WAIT_FOR_WVALID;
+                        end
+                        else
+                        begin
+                            ram_controller_state<=WAIT_FOR_WVALID;
+                        end
+                    end
+                    else
+                    begin
+                        bid<=write_id_queue[write_address_read_pointer];
+                        bvalid=1;
+                        bresp=2'b11;
+                        ram_controller_state<=WAIT_FOR_BREADY;
+                        wready=0;
+                    end
+                end
+                WAIT_FOR_BREADY:
+                begin
+                    if(bready)
+                    begin
+                        no_of_transfers<=0;
+                        bid<=write_id_queue[write_address_read_pointer];
+                        bresp<=0;
+                        bvalid<=0;
+                        ram_controller_state<=RAM_CONTROLLER_IDLE;
+                        if(write_address_read_pointer==1)
+                        begin
+                            write_address_read_pointer=0;
+                            flip=!flip;
+                        end
+                        else
+                        begin
+                            write_address_read_pointer=write_address_read_pointer+1;
+                        end
+                    end
+                    else
+                    begin
+                        ram_controller_state<=WAIT_FOR_BREADY;
                     end
                 end
             endcase

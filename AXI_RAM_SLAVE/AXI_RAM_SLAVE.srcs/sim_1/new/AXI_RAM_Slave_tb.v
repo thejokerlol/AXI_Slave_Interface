@@ -23,6 +23,11 @@
 module AXI_RAM_Slave_tb(
 
     );
+    //parameters
+    
+    parameter HIGH=1'b1;
+    parameter LOW=1'b0;
+    
     
         //global signals
     
@@ -160,7 +165,7 @@ module AXI_RAM_Slave_tb(
    
    initial
    begin
-    #100 $finish;
+    #800 $finish;
    end 
     
    always
@@ -170,6 +175,62 @@ module AXI_RAM_Slave_tb(
     begin
         #4 reset=0;
         #6 reset=1;
+        
+        #40 awvalid<=1;
+            awaddr<=32'd64;
+            awsize<=1;
+            awlen<=2;
+            awburst<=2'b10;//incremetal burst
+        
+        #40 awvalid=0;
+        
+        #40 awaddr<=32'd512;
+            awsize<=1;
+            awlen<=2;
+            awvalid<=1;
+        
+        #40 awvalid<=0;
+        
+        #40 wdata<=32'hFFFDFFFC;
+            wvalid=HIGH;
+            
+        #40 wvalid=LOW;
+        
+        #80 wdata<=32'hFFFBFFFA;
+            wvalid=HIGH;
+            
+        #40 wvalid=LOW;
+        
+        #40 bready=1;
+        
+        
+        //second write burst
+        #120 wdata<=32'hFFF0FFF8;
+            wvalid=HIGH;
+            
+        #40 wvalid=LOW;
+        
+        #40 wdata<=32'h444F555F;
+            wvalid=HIGH;
+            
+        #40 wvalid=LOW;
+        
+        
+        //first read address transfer
+        
+        #40 araddr<=32'd64;
+            arvalid<=1;
+            arsize<=1;
+            arlen<=2;
+            arburst<=2'b10;
+            
+        #40 arvalid<=LOW;
+        
+            
+            
+        
+        
+        
     end
     
     
