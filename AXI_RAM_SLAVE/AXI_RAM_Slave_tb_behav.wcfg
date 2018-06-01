@@ -188,10 +188,52 @@
    <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/address" type="array">
       <obj_property name="ElementShortName">address[3:0][9:0]</obj_property>
       <obj_property name="ObjectShortName">address[3:0][9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/address[3]" type="array">
+         <obj_property name="ElementShortName">[3][9:0]</obj_property>
+         <obj_property name="ObjectShortName">address[3][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/address[2]" type="array">
+         <obj_property name="ElementShortName">[2][9:0]</obj_property>
+         <obj_property name="ObjectShortName">address[2][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/address[1]" type="array">
+         <obj_property name="ElementShortName">[1][9:0]</obj_property>
+         <obj_property name="ObjectShortName">address[1][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/address[0]" type="array">
+         <obj_property name="ElementShortName">[0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">address[0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/data_in" type="array">
       <obj_property name="ElementShortName">data_in[3:0][7:0]</obj_property>
       <obj_property name="ObjectShortName">data_in[3:0][7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/data_in[3]" type="array">
+         <obj_property name="ElementShortName">[3][7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_in[3][7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/data_in[2]" type="array">
+         <obj_property name="ElementShortName">[2][7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_in[2][7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/data_in[1]" type="array">
+         <obj_property name="ElementShortName">[1][7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_in[1][7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/data_in[0]" type="array">
+         <obj_property name="ElementShortName">[0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_in[0][7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject db_ref_id="1" fp_name="/AXI_RAM_Slave_tb/Test_Slave/data_out" type="array">
       <obj_property name="ElementShortName">data_out[3:0][7:0]</obj_property>

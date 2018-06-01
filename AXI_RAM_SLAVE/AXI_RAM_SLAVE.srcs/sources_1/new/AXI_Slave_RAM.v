@@ -375,6 +375,8 @@ module AXI_Slave_RAM(
             rvalid<=0;
             rdata<=0;
             rid<=0;
+            rresp<=0;
+            rlast<=0;
         end
         else
         begin
@@ -462,6 +464,7 @@ module AXI_Slave_RAM(
                 end
                 PUT_DATA_ON_BUS:
                 begin
+                    rid<=read_id_queue[read_address_read_pointer];
                     case(read_size_queue[read_address_read_pointer])
                         2'b00://one byte
                         begin
@@ -485,6 +488,14 @@ module AXI_Slave_RAM(
                     endcase
                     read_address<=read_address_queue[read_address_read_pointer]+(2**(read_size_queue[read_address_read_pointer]));
                     rvalid<=HIGH;
+                    if(no_of_transfers==(read_len_queue[read_address_read_pointer]-1))
+                    begin
+                        rlast<=1;
+                    end
+                    else
+                    begin
+                        rlast<=0;
+                    end
                     no_of_transfers<=no_of_transfers+1;
                     ram_controller_state<=WAIT_FOR_RREADY;
                 end
@@ -493,6 +504,7 @@ module AXI_Slave_RAM(
                     if(rready==HIGH)
                     begin
                         rvalid=LOW;
+                        rlast=LOW;
                         if(no_of_transfers<(read_len_queue[read_address_read_pointer]))
                         begin
                             //address<=address+(2**(read_size_queue[read_address_read_pointer-1]));
